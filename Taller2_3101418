@@ -1,6 +1,6 @@
 ## Descripción
 
-Mapa de donde se muestran los trazados de las ciclo rutas de la ciudad de Bogotá, describiendo el tipo de material en el que está hecha
+Mapa de donde se muestran 
 
 ##  Cuál es el problema a tratar?
 
@@ -16,7 +16,8 @@ Datos abiertos Bogotá: shapefiles obtenidos de la gdb de IDECA.
 
 ##  Herramientas
 - QGIS
-- QgisCloud
+- Geoserver
+- Postgis
 
 ##  Proceso Realizado
 
