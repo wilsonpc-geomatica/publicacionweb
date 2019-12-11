@@ -1,1 +1,94 @@
+## Descripción
+
+Mapa de donde se muestran los trazados de las ciclo rutas de la ciudad de Bogotá, describiendo el tipo de material en el que está hecha
+
+##  Cuál es el problema a tratar?
+
+Ubicación de ciclorutas de toda la ciudad, ubicando localidades de la ciudad, vias principales y sectores donde se ubican dichas vías según el material de lo que están hechas. 
+
+##  Por qué un mapa ayuda a resolverlo?
+
+Mediante la ubicación geográfica es fundamental para la mayoría de las actividades humanas. En este caso, el uso de un mapa que permita mostar donde hay ciclorutas, permite a los ciclistas identificar las mejores rutas para llegar a sus destinos. Esto redunda en mejora de la calidad de vida, mejora el ambiente porque evita que algunos ciudadanos usen vehículos de combustión interna.
+
+## Fuente de datos
+
+Datos abiertos Bogotá: shapefiles obtenidos de la gdb de IDECA.
+
+##  Herramientas
+- QGIS
+- QgisCloud
+
+##  Proceso Realizado
+
+- Se creó cuenta gratuita en QgisCloud https://qgiscloud.com/
+- En QGIS se instaló del plugin de qgiscloud
+- Una vez obtenidas las capas en formato shape, se cargan en Qgis 3x.
+
+![carga](images/carga_shapes.jpg)
+
+- Se procede a configurar la simbología de la capa de ciclo rutas.
+
+![pciclovia](images/prop_cvia_simbol.jpg)
+
+- Se editan las propiedades para la localidad en cuanto a texto, asignando tamaño, color, escala de visualización, entre otras:
+
+![proploc](images/prop_localidad_etiq_texto.jpg)
+
+![proploc](images/prop_localidad_etiqueta.jpg)
+
+
+- De igual manera, se procede a configurar las propiedades de visualización para la capa de vias principales, de manera que muestren textos solamente cuando se haga zoom menor a 1:10.000 y el texto debe ir paralelo a las lineas de la via:
+
+![propvia](images/prop_viaprin_etiq_rep.jpg)
+
+![proploc](images/prop_viaprin_etiqueta.jpg)
+
+- Una vez obtenido el mapa en Qgis, se procede a generar el servicio geografico WMS mediante la carga usando el software libre Qgis Cloud, se actualizan las capas y se cargan los datos:
+
+![carga1](images/qgis_cloud_carga.jpg)
+
+- Una vez cargados los datos, aparece una previsualización del mapa web:
+
+![carga2](images/qgis_cloudmapa.jpg)
+
+- Haciendo zoom +, se puede ver la información con mas de detalle , incluyendo el nombre de la vía.
+
+![carga3](images/qgiscloud_pub_zoom.jpg)
+
+- Finalmente, se puede ver el servicio publicado en la web:
+
+![carga2](images/qgiscloud_publicado.jpg)
+
+## Segunda Publicación
+- Para esta publicación, se usan las capas de localidad y poligonos puntos calientes (Hot Spot) resultantes de una capa de puntos relacionados con eventos de remoción en masa en la ciudad de Bogotá.
+
+## Criterios de clasificación
+
+Para determinar la gama de colores, se determinó usar: Clasificación Graduada, Columna Gi_Bin, El modo usado fué Rupturas naturales (natural breaks) y los colores se usó una gama desde el azul oscuro para las zonas menos afectadas hasta el Rojo para sectores con mayor frecuencia de eventos de remoción.
+
+![ev_rem1](images/hotspot_rem_simbol.jpg)
+
+- Se procede a la carga de estos archivos a través de QGis Cloud:
+
+![ev_rem2](images/qgis_cloud_carga_ev_rem.jpg)
+
+- Posteriormente se publica:
+
+![ev_rem3](images/hotspot_rem_pub2.jpg)
+
+- La publicación se verá de la siguiente manera:
+
+![ev_rem4](images/qgiscloud_pub_ev_rem.jpg)
+
+
+##  Urls
+
+- Mapa Web Clicovias
+https://qgiscloud.com/wilsonpc_geomatica/tarea1_3101418/?bl=&st=&l=localidad%2Cvia_principal%2CCiclovia&t=tarea1_3101418&e=-74.19761%2C4.58665%2C-74.00573%2C4.71724
+
+- Mapa web Hot Spot de eventos de remoción.
+https://qgiscloud.com/wilsonpc_geomatica/tarea1_3101418_evento_rem2/?bl=&st=&l=localidad%2Chs_remoc&t=tarea1_3101418_evento_rem2&e=-0.00017%2C-0.00008%2C0.00017%2C0.00008
+
+
+
 
